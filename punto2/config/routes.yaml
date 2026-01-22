@@ -7,5 +7,24 @@
 # To list all registered routes, run the following command:
 #   bin/console debug:router
 
-controllers:
-    resource: routing.controllers
+# config/routes.yaml
+
+create_contract:
+    path: /api/contracts
+    controller: App\Infrastructure\Input\Http\Controller\ContractApiController::create
+    methods: [POST]
+
+project_installments:
+    path: /api/contracts/installments
+    controller: App\Infrastructure\Input\Http\Controller\ContractApiController::projectInstallments
+    methods: [POST]
+
+contracts_list:
+    path: /api/contracts
+    controller: App\Infrastructure\Input\Http\Controller\ContractApiController::list
+    methods: [GET]
+
+contracts_show:
+    path: /api/contracts/{id}
+    controller: App\Infrastructure\Input\Http\Controller\ContractApiController::show
+    methods: [GET]
